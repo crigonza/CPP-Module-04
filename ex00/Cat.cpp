@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 21:05:56 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/05 10:37:25 by crigonza         ###   ########.fr       */
+/*   Created: 2023/10/05 10:39:13 by crigonza          #+#    #+#             */
+/*   Updated: 2023/10/05 10:44:27 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Cat.hpp"
 
-#include <iostream>
-
-class Animal
+Cat::Cat(void) : Animal("Cat")
 {
-    protected:
-        std::string     _type;
-    public:
-        Animal(void);
-        Animal(std::string type);
-        Animal(Animal const &animal);
-        ~Animal(void);
-
-        Animal  &operator=(Animal const &animal);
-
-        std::string     getType(void);
-        std::string     makeSound(void);
-};
-
-#endif
+    std::cout << "Cat default constructor called!." << std::endl;
+}

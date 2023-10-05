@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 21:05:56 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/05 10:37:25 by crigonza         ###   ########.fr       */
+/*   Created: 2023/10/05 10:20:22 by crigonza          #+#    #+#             */
+/*   Updated: 2023/10/05 10:22:31 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Animal.hpp"
 
-#include <iostream>
-
-class Animal
+int main() 
 {
-    protected:
-        std::string     _type;
-    public:
-        Animal(void);
-        Animal(std::string type);
-        Animal(Animal const &animal);
-        ~Animal(void);
-
-        Animal  &operator=(Animal const &animal);
-
-        std::string     getType(void);
-        std::string     makeSound(void);
-};
-
-#endif
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl; std::cout << i->getType() << " " << std::endl; i->makeSound(); //will output the cat sound! j->makeSound();
+    meta->makeSound();
+    return 0;
+}
