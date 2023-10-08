@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:23:51 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/05 10:45:40 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/08 17:54:47 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 
 #include "Animal.hpp"
 
-class   Dog: public virtual Animal
+class   Dog : public Animal
 {
-    Dog(void);
-    Dog(Dog const &dog);
-    ~Dog(void);
+    public:
+        Dog(void);
+        Dog(Dog const &dog);
+        ~Dog(void);
 
-    Dog     &operator=(Animal const &dog);
+        Dog     &operator=(Dog const &dog);
+
+        void    makeSound(void) const;
 };
 
 #endif

@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:39:13 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/08 18:08:26 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/08 18:09:41 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Dog::Dog(void) : Animal("Dog")
 {
-    std::cout << "Cat default constructor called!." << std::endl;
+    std::cout << "Dog default constructor called!." << std::endl;
 }
 
-Cat::Cat(Cat const &cat)
+Dog::Dog(Dog const &dog)
 {
-    std::cout << "Cat copy constuctor called!." << std::endl;
-    *this = cat; 
+    std::cout << "Dog copy constuctor called!." << std::endl;
+    *this = dog; 
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
-    std::cout << "Cat destructor Called!." << std::endl;
+    std::cout << "Dog destructor Called!." << std::endl;
 }
 
-Cat     &Cat::operator=(Cat const &cat)
+Dog     &Dog::operator=(Dog const &dog)
 {
-    std::cout << "Cat assignment operator called!." << std::endl;
-    this->_type = cat._type;
+    std::cout << "Dog assignment operator called!." << std::endl;
+    this->_type = dog._type;
     return (*this);
 }
 
-void    Cat::makeSound(void) const
+void    Dog::makeSound(void) const
 {
-    std::cout << "Miaaauuuu!." << std::endl;
+    std::cout << "Guau! Guauu!." << std::endl;
 }

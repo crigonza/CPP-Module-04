@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:05:56 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/05 10:37:25 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/08 17:59:08 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class Animal
         Animal(void);
         Animal(std::string type);
         Animal(Animal const &animal);
-        ~Animal(void);
+        virtual ~Animal(void);
 
         Animal  &operator=(Animal const &animal);
 
-        std::string     getType(void);
-        std::string     makeSound(void);
+        virtual std::string     getType(void) const;
+        virtual void    makeSound(void) const;
 };
 
 #endif

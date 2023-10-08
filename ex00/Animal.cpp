@@ -6,13 +6,13 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:11:20 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/05 10:38:35 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/08 19:09:21 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : _type("default")
+Animal::Animal(void) : _type("None")
 {
     std::cout << "Animal " << this->_type << " default constructor called!." << std::endl;
 }
@@ -30,7 +30,7 @@ Animal::Animal(Animal const &animal)
 
 Animal::~Animal(void)
 {
-    std::cout << "Animal " << this->_type << " destructor called!.";
+    std::cout << "Animal " << this->_type << " destructor called!." << std::endl;
 }
 
 Animal &Animal::operator=(Animal const &animal)
@@ -40,12 +40,12 @@ Animal &Animal::operator=(Animal const &animal)
     return (*this);
 }
 
-std::string     Animal::getType(void)
+std::string     Animal::getType(void) const
 {
     return (this->_type);
 }
 
-std::string     Animal::makeSound(void)
+void     Animal::makeSound(void) const
 {
-    return (this->_type);
+    std::cout << "Animal Sounds!." << std::endl;
 }
