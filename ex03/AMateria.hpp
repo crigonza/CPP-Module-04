@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 21:05:56 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 10:49:38 by crigonza         ###   ########.fr       */
+/*   Created: 2023/10/09 18:11:25 by crigonza          #+#    #+#             */
+/*   Updated: 2023/10/09 18:56:38 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
 
-class Animal
+class AMateria
 {
     protected:
         std::string     _type;
     public:
-        Animal(void);
-        Animal(std::string type);
-        Animal(Animal const &animal);
-        virtual ~Animal(void);
+        AMateria(void);
+        AMateria(std::string const &type);
+        AMateria(AMateria const &amateria);
+        virtual ~AMateria(void);
 
-        Animal  &operator=(Animal const &animal);
+        AMateria    &operator=(AMateria const &amateria);
 
-        virtual std::string     getType(void) const;
-        virtual void    makeSound(void) const;
+        std::string const   &getType() const;
+        virtual AMateria*   clone() const = 0;
+        virtual void    use(ICharacter  &target);
 };
 
 #endif

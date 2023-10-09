@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:20:22 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 10:48:19 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:45:08 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,28 @@
 
 int main() 
 {
-    const Animal    *meta = new Animal();
-    const Animal    *j = new Dog();
-    const Animal    *i = new Cat();
-    const WrongAnimal    *w = new WrongCat();
+    const Animal    *catsAndDogs[4];
 
+    for (int i = 0; i < 4; i++)
+    {
+        if (i % 2 == 0)
+            catsAndDogs[i] = new Cat();
+        else 
+            catsAndDogs[i] = new Dog();
+    }
     std::cout << "-------------------------------" << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << w->getType() << " " << std::endl;
     std::cout << "-------------------------------" << std::endl;
-    meta->makeSound();
-    j->makeSound();
-    i->makeSound();
-    w->makeSound();
+    for (int i = 0; i < 4; i++)
+        delete catsAndDogs[i];
     std::cout << "-------------------------------" << std::endl;
-    delete meta;
-    delete j;
-    delete i;
-    delete w;
-    
+    std::cout << "-------------------------------" << std::endl;
+    Cat     a;
+    Cat     b(a);
+    std::cout << "-------Cat a ideas:------" << std::endl; 
+    a.showIdeas();
+    std::cout << "-------Cat b ideas:------" << std::endl; 
+    b.showIdeas();
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
     return (0);
 }
