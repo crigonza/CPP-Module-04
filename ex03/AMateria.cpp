@@ -6,11 +6,12 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:57:25 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 19:21:35 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/09 23:48:19 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria(void) : _type("None")
 {
@@ -26,6 +27,10 @@ AMateria::AMateria(AMateria const &amateria)
 {
     std::cout << "AMateria copy constructor called!." << std::endl;
     *this = amateria; 
+}
+
+AMateria::~AMateria(void)
+{
 }
 
 AMateria    &AMateria::operator=(AMateria const &amateria)

@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:50:22 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 18:51:18 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/09 23:42:20 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class   Cure : public AMateria
         Cure     &operator=(Cure const &cure);
 
         AMateria    *clone() const;
+        void    use(ICharacter &target);
 };
 
 #endif

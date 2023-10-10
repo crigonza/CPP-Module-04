@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:11:25 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 18:56:38 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/09 23:36:28 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #define AMATERIA_HPP
 
 #include <iostream>
-#include "ICharacter.hpp"
 
-class AMateria
+class   ICharacter;
+
+class   AMateria
 {
     protected:
         std::string     _type;
