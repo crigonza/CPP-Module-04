@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:52:03 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 10:26:50 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:25:39 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void    Character::equip(AMateria *m)
             std::cout << i << std::endl;
             break;
         }
+        if (i == 3)
+            delete m;
     }
 }
 
