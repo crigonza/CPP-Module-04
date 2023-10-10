@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 21:58:02 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 08:44:54 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:31:27 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@ int     main(void)
     std::cout << "-------------------------------" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     AMateria* tmp;
+    tmp = src->createMateria("fire");
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
     tmp = src->createMateria("ice");
     me->equip(tmp);
-    tmp = src->createMateria("fire");
-    //me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
     tmp = src->createMateria("ice");
@@ -48,10 +47,11 @@ int     main(void)
     me->unequip(2);
     me->unequip(3);
     me->use(3, *bob);
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
 
     delete bob;
     delete me;
     delete src;
-    system("leaks -q materia");
-    return 0;
+    return (0);
 }

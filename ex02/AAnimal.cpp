@@ -47,10 +47,8 @@ std::string     AAnimal::getType(void) const
 
 void     AAnimal::makeSound(void) const
 {
-    std::cout << "AAnimal Sounds!." << std::endl;
 }
 
 void    AAnimal::showIdeas(void) const
 {
-    std::cout << "AAnimal random ideas!." << std::endl;
 }

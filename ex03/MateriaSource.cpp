@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 21:43:01 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 08:43:00 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:19:46 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,14 @@ MateriaSource::MateriaSource(MateriaSource const &materia)
 MateriaSource::~MateriaSource(void)
 {
     for (int i = 0; i < 4; i++)
+    {
+        if (this->_materias[i])
+        {
+            std::cout << "MateriaSource " << this->_materias[i]->getType();
+            std::cout << " unlearned." << std::endl; 
+        }
         delete this->_materias[i];
+    }
 }
 
 MateriaSource   &MateriaSource::operator=(MateriaSource const &materia)
@@ -58,7 +65,7 @@ void    MateriaSource::learnMateria(AMateria *m)
         if (this->_materias[i] == nullptr)
         {
             this->_materias[i] = m;
-            std::cout << "AMateria " << m->getType() << " learned." << std::endl;
+            std::cout << "MateriaSource " << m->getType() << " learned." << std::endl;
             break;
         }
     }
@@ -69,7 +76,10 @@ AMateria    *MateriaSource::createMateria(std::string const &type)
     for (int i = 0; i < 4; ++i)
     {
         if (this->_materias[i] && this->_materias[i]->getType() == type)
+        {
+            std::cout << "MateriaSource " << type << " created." << std::endl;
             return (this->_materias[i]->clone());
+        }
     }
     return (nullptr);
-}
+} 

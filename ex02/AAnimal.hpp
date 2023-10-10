@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:05:56 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/09 17:56:38 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:58:17 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AAnimal
 
         AAnimal  &operator=(AAnimal const &animal);
 
-        virtual std::string     getType(void) const;
+        std::string     getType(void) const;
         virtual void    makeSound(void) const = 0;
         virtual void    showIdeas(void) const = 0;
 };

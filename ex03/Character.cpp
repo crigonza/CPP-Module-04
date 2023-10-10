@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:52:03 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 08:42:27 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:26:50 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Character::Character(std::string name) : _name(name)
         this->_inventory[i] = nullptr;
     for  (int i = 0; i < 10; i++)
         this->_dropped[i] = nullptr;
+    std::cout << "Character " << name << " created." << std::endl;
 }
 
 Character::Character(Character const &character) : _name(character._name)
@@ -42,9 +43,23 @@ Character::Character(Character const &character) : _name(character._name)
 Character::~Character(void)
 {
     for (int i = 0; i < 4; i++)
+    {
+        if (this->_inventory[i])
+        {
+            std::cout << "AMateria " << this->_inventory[i]->getType();
+            std::cout << " equiped in slot " << i << " destroyed." << std::endl;
+        }
         delete this->_inventory[i];
+    }
     for (int i = 0; i < 10; i++)
+    {
+        if (this->_dropped[i])
+        {
+            std::cout << "AMateria " << this->_dropped[i]->getType();
+            std::cout << " dropped in the floor destroyed." << std::endl;
+        }
         delete this->_dropped[i];
+    }
 }
 
 Character   &Character::operator=(Character const &character)
@@ -90,9 +105,13 @@ void    Character::unequip(int idx)
         for (int i = 0; i < 10; i++)
         {
             if (!this->_dropped[i])
+            {
                 this->_dropped[i] = this->_inventory[idx];
                 break;
+            }
         }
+        std::cout << "AMateria " << this->_inventory[idx]->getType();
+        std::cout << " unequiped." << std::endl;
         this->_inventory[idx] = nullptr;
     }
 }
