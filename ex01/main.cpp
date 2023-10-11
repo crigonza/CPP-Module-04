@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:20:22 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 10:53:53 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:16:34 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     std::cout << "-------------------------------" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     Cat     a;
-    Cat     b(a);
+    Cat     b = a;
     std::cout << "-------Cat a ideas:------" << std::endl; 
     a.showIdeas();
     std::cout << "-------Cat b ideas:------" << std::endl; 

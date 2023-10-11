@@ -6,7 +6,7 @@
 /*   By: crigonza <crigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 21:58:02 by crigonza          #+#    #+#             */
-/*   Updated: 2023/10/10 10:31:27 by crigonza         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:30:29 by crigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,14 @@ int     main(void)
     delete bob;
     delete me;
     delete src;
+    for (int i = 0; i < 100; i++)
+    {
+        if (Character::dropped[i])
+        {
+            std::cout << "AMateria " << Character::dropped[i]->getType();
+            std::cout << " dropped in the floor destroyed." << std::endl;
+            delete Character::dropped[i];
+        }
+    }
     return (0);
 }
